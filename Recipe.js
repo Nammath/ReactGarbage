@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Recipes from './Recipes';
 import RecipeList from './RecipeList'
+import RecipeShow from './RecipeShow'
+import axios from 'axios';
 
 const initialState = {
     products: [],
@@ -33,6 +35,7 @@ class Recipe extends Component {
             this._inputElement.value = '';
             this._inputElementQ.value = '';
         }
+        
         //console.log(this.state.products);
         e.preventDefault();
 
@@ -42,7 +45,8 @@ class Recipe extends Component {
         if(this._recipeName.value !== ''){
             var newRecipe = {
                 products: this.state.products,
-                name: this._recipeName.value
+                name: this._recipeName.value,
+                key: Date.now()
             }
             this.setState((prevState) =>{
                 return{
@@ -51,10 +55,12 @@ class Recipe extends Component {
                     name: []
                 };
             });
+            var url = 'http://localhost:3001/recipes';
+            axios.post(url, {newRecipe})
+            
             this._recipeName.value = '';
             console.log(this.state.recipes);
         }
-        e.preventDefault();
     }
     deleteItem(key){
         var filteredItems = this.state.products.filter(function (item){
@@ -87,7 +93,7 @@ class Recipe extends Component {
                         ref={(a) => this._recipeName = a}/>
                 <button type="submit">Add Recipe</button>
             </form>
-            <RecipeList entriesRecipy = {this.state.recipes}></RecipeList>
+            <RecipeShow></RecipeShow>
 
             
         </div> 

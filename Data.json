@@ -1,0 +1,58 @@
+{
+  "recipes": [
+    {
+      "newRecipe": {
+        "products": [
+          {
+            "text": "kostka rosołowa 1 sztuka",
+            "key": 1545128056088
+          },
+          {
+            "text": "kurczak 500 g",
+            "key": 1545128083666
+          },
+          {
+            "text": "marchewka 2 sztuki",
+            "key": 1545128092635
+          },
+          {
+            "text": "pietruszka 1 sztuka",
+            "key": 1545128103705
+          }
+        ],
+        "name": "rosół",
+        "key": 1545128108773
+      },
+      "id": 1
+    },
+    {
+      "newRecipe": {
+        "products": [
+          {
+            "text": "mąka 300g",
+            "key": 1545128190046
+          },
+          {
+            "text": "sól 5g",
+            "key": 1545128203951
+          },
+          {
+            "text": "wrząca woda 125 ml",
+            "key": 1545128215095
+          },
+          {
+            "text": "jajko 1 sztuka",
+            "key": 1545128226261
+          },
+          {
+            "text": "masło 20 g",
+            "key": 1545128234684
+          }
+        ],
+        "name": "ciasto na pierogi",
+        "key": 1545128241308
+      },
+      "id": 2
+    }
+  ]
+}
