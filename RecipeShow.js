@@ -7,6 +7,7 @@ class RecipeShow extends Component {
         this.state = {
             recipes: []
         }
+        this.deleteRecipe = this.deleteRecipe.bind(this);
     }
     componentDidMount(){
         var url = 'http://localhost:3001/recipes'
@@ -17,15 +18,28 @@ class RecipeShow extends Component {
                 console.log(this.state)
             })
     }
+    deleteRecipe(e){
+        var url = 'http://localhost:3001/recipes/'
+        axios.delete(url + e)
+        window.location.reload();
+    }
 
     render() { 
-        var recipes = this.state.recipes.map((item, i) => <li>{item.newRecipe.name}</li>)
+        var recipes = this.state.recipes.map((item, i) => 
+        <li>
+            {item.newRecipe.name} 
+            <button id={i} onClick={() => this.deleteRecipe(item.id)}>Delete</button>
+        </li>)
         return (
             <div>
-                <ul>{recipes}</ul>
+                <ul>
+                    {recipes}
+                    
+                </ul>
             </div>
           );
     }
 }
+
  
 export default RecipeShow;
